@@ -2,8 +2,9 @@ import { Component, OnInit, effect, inject } from '@angular/core';
 import { Menu } from '../../interfaces/menu.interface';
 
 @Component({
-  templateUrl: './layout-page.component.html',
-  styleUrls: ['./layout-page.component.css']
+    templateUrl: './layout-page.component.html',
+    styleUrls: ['./layout-page.component.css'],
+    standalone: false
 })
 export class LayoutPageComponent implements OnInit{
 

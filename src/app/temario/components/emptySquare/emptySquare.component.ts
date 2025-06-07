@@ -2,9 +2,10 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-emptySquare',
-  templateUrl: './emptySquare.component.html',
-  styleUrls: ['./emptySquare.component.css']
+    selector: 'app-emptySquare',
+    templateUrl: './emptySquare.component.html',
+    styleUrls: ['./emptySquare.component.css'],
+    standalone: false
 })
 export class EmptySquareComponent {
 

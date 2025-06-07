@@ -2,9 +2,10 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-square',
-  templateUrl: './square.component.html',
-  styleUrls: ['./square.component.css']
+    selector: 'app-square',
+    templateUrl: './square.component.html',
+    styleUrls: ['./square.component.css'],
+    standalone: false
 })
 export class SquareComponent {
 
