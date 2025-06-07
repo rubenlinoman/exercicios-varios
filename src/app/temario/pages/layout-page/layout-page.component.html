@@ -1,0 +1,35 @@
+<div class="row mt-3">
+  <div *ngIf="true" class="container" align="center">
+    <mat-button-toggle-group #group="matButtonToggleGroup">
+      <mat-button-toggle routerLink="square" aria-label="square" routerLinkActive="mat-button-toggle-checked" class="p-2">
+        <mat-icon color="primary">apps</mat-icon> Square
+      </mat-button-toggle>
+      <mat-button-toggle routerLink="emptySquare" aria-label="emptySquare" routerLinkActive="mat-button-toggle-checked" class="p-2">
+        <mat-icon color="primary">check_box_outline_blank</mat-icon> Empty Saquare
+      </mat-button-toggle>
+      <mat-button-toggle routerLink="ceims" aria-label="ceims" routerLinkActive="mat-button-toggle-checked" class="p-2">
+        <mat-icon color="primary">group</mat-icon> Dic. CEIMS
+      </mat-button-toggle>
+      <mat-button-toggle routerLink="centros" aria-label="centros" routerLinkActive="mat-button-toggle-checked" class="p-2">
+        <mat-icon color="primary">apartment</mat-icon> Dic. Centros
+      </mat-button-toggle>
+      <mat-button-toggle routerLink="fundaciones" aria-label="fundaciones" routerLinkActive="mat-button-toggle-checked" class="p-2">
+        <mat-icon color="primary">corporate_fare</mat-icon> Dic. Fundaciones
+      </mat-button-toggle>
+      <mat-button-toggle routerLink="iconos" aria-label="iconos" routerLinkActive="mat-button-toggle-checked" class="p-2">
+        <mat-icon color="primary">add_reaction</mat-icon> Iconos
+      </mat-button-toggle>
+      <mat-button-toggle routerLink="imagenes" aria-label="imagenes" routerLinkActive="mat-button-toggle-checked" class="p-2">
+        <mat-icon color="primary">imagesmode</mat-icon> Imágenes
+      </mat-button-toggle>
+      <mat-button-toggle routerLink="protocolos" aria-label="protocolos" routerLinkActive="mat-button-toggle-checked" class="p-2">
+        <mat-icon color="primary">gavel</mat-icon> Protocolos
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
+<div class="row mt-3 justify-content-center">
+  <div class="col-12 col-md-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>
