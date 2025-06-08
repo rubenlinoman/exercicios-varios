@@ -10,29 +10,29 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class EmptySquareComponent {
 
   public fb = inject(FormBuilder);
-  public ladosForm: FormGroup;
+  public lonxitudeLadoForm: FormGroup;
   public square: string = '';
 
   constructor() {
-    this.ladosForm = this.fb.group({
-      lados: ['']
+    this.lonxitudeLadoForm = this.fb.group({
+      lonxitudeLado: ['']
     });
   }
 
   calculateSquare() {
-    const lados = this.ladosForm.value.lados;
+    const lonxitudeLado = this.lonxitudeLadoForm.value.lonxitudeLado;
     this.square = '';
-    if (lados) {
+    if (lonxitudeLado) {
 
-      for (let f = 0; f < lados; f++) {
-        for (let c = 0; c < lados; c++) {
-          if (f == 0 || f == lados-1) { // Se e é a primeria ou a última
+      for (let f = 0; f < lonxitudeLado; f++) {
+        for (let c = 0; c < lonxitudeLado; c++) {
+          if (f == 0 || f == lonxitudeLado-1) { // Se e é a primeria ou a última
             this.square += '*';
           } else {
-            if (c == 0 || c == lados-1) {
+            if (c == 0 || c == lonxitudeLado-1) {
               this.square += '*';
             } else {
-              this.square += '&nbsp&nbsp';
+              this.square += '&nbsp';
             }
           }
         }

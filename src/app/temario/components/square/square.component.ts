@@ -10,22 +10,22 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class SquareComponent {
 
   public fb = inject(FormBuilder);
-  public ladosForm: FormGroup;
+  public lonxitudeLadoForm: FormGroup;
   public square: string = '';
 
   constructor() {
-    this.ladosForm = this.fb.group({
-      lados: ['']
+    this.lonxitudeLadoForm = this.fb.group({
+      lonxitudeLado: ['']
     });
   }
 
   calculateSquare() {
-    const lados = this.ladosForm.value.lados;
+    const lonxitudeLado = this.lonxitudeLadoForm.value.lonxitudeLado;
     this.square = '';
-    if (lados) {
+    if (lonxitudeLado) {
 
-      for (let i = 0; i < lados; i++) {
-        for (let j = 0; j < lados; j++) {
+      for (let i = 0; i < lonxitudeLado; i++) {
+        for (let j = 0; j < lonxitudeLado; j++) {
           this.square += '*';
         }
         this.square += '<br>';

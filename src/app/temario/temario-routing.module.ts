@@ -3,6 +3,7 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SquareComponent } from './components/square/square.component';
+import { TriangleComponent } from './components/triangles/triangle.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     children: [
       { path: 'square', component: SquareComponent },
       { path: 'emptySquare', component: EmptySquareComponent },
+      { path: 'triangle', component: TriangleComponent },
       { path: '**', redirectTo: 'square' }
     ]
   }

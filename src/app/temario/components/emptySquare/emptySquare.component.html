@@ -1,17 +1,17 @@
 <div class="row d-flex justify-content-center">
   <div class="col-12">
     <h2 class="text-center">Empry square</h2>
-    <form [formGroup]="ladosForm" (ngSubmit)="calculateSquare()">
+    <form [formGroup]="lonxitudeLadoForm" (ngSubmit)="calculateSquare()">
       <mat-form-field class="w-100">
-        <mat-label>Nº de Lados</mat-label>
-        <input matInput type="number" formControlName="lados">
+        <mat-label>Nº de lonxitude do lado</mat-label>
+        <input matInput type="number" formControlName="lonxitudeLado">
       </mat-form-field>
       <div>
         <button mat-raised-button type="submit">Enviar</button>
       </div>
     </form>
   </div>
-  <div class="col-12 mt-5" align="center" *ngIf="square !== null">
-    <p [innerHTML]="square"></p>
+  <div class="col-12 mt-5" *ngIf="square">
+    <p [innerHTML]="square" style="font-family: monospace;"></p>
   </div>
 </div>
