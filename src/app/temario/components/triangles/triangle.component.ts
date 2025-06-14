@@ -10,8 +10,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class TriangleComponent {
   public fb = inject(FormBuilder);
   public triangleForm: FormGroup;
-  public rightTriangle: string = '';
-  public invertedRightTriangle: string = '';
+  public rightTriangle: string = ''; // Triángulo rectángulo
+  public invertedRightTriangle: string = ''; // Triándulo rectángulo invertido
+  public equilateralTriangle: string = ''; // Triángulo equilátero
+  public inverseEquilateralTriangle: string = ''; // Triángulo equilátero inverso
 
   constructor() {
     this.triangleForm = this.fb.group({
@@ -21,25 +23,64 @@ export class TriangleComponent {
 
   calculateTriangle() {
     const altura = this.triangleForm.value.altura;
-    this.rightTriangle = '';
-    for (let i = 0; i < altura; i++) {
-      for (let j = 0; j < altura; j++) {
-        if (j <= i) {
-          this.rightTriangle += '*';
+
+    // Triángulo equilátero
+    this.equilateralTriangle = '';
+    const base = 2 * altura - 1;
+    if (altura) {
+      for (let i = 0; i < altura; i++) {
+        for (let j = 0; j < base; j++) {
+          if (j >= altura - i - 1 && j <= altura + i - 1) {
+            this.equilateralTriangle += '*';
+          } else {
+            this.equilateralTriangle += '&nbsp';
+          }
         }
+        this.equilateralTriangle += '<br>';
       }
-      this.rightTriangle += '<br>';
     }
 
-    // Triángulo invertido
-    this.invertedRightTriangle = '';
-    for (let i = 0; i < altura; i++) {
-      for (let j = altura; j > i; j--) {
-        if (j >= i) {
-          this.invertedRightTriangle += '*';
+    // Triángulo equilátero inverso
+    this.inverseEquilateralTriangle = '';
+
+    if (altura) {
+      for (let i = 0; i < altura; i++) {
+        for (let j = 0; j < base; j++) {
+          if (j >= i && j < base - i) {
+            this.inverseEquilateralTriangle += '*';
+          } else {
+            this.inverseEquilateralTriangle += '&nbsp';
+          }
         }
+        this.inverseEquilateralTriangle += '<br>';
       }
-      this.invertedRightTriangle += '<br>';
+    }
+
+    // Triángulo rectángulo
+    this.rightTriangle = '';
+    if (altura) {
+      for (let i = 0; i < altura; i++) {
+        for (let j = 0; j < altura; j++) {
+          if (j <= i) {
+            this.rightTriangle += '*';
+          }
+        }
+        this.rightTriangle += '<br>';
+      }
+    }
+
+    // Triángulo rectçangulo invertido
+    this.invertedRightTriangle = '';
+
+    if (altura) {
+      for (let i = 0; i < altura; i++) {
+        for (let j = altura; j > i; j--) {
+          if (j >= i) {
+            this.invertedRightTriangle += '*';
+          }
+        }
+        this.invertedRightTriangle += '<br>';
+      }
     }
   }
 }

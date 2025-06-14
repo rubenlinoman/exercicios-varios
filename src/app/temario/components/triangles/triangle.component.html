@@ -11,6 +11,14 @@
       </div>
     </form>
   </div>
+  <div class="col-12 mt-5" *ngIf="equilateralTriangle">
+    <h3 class="mb-4">Triángulo equilátero</h3>
+    <p [innerHTML]="equilateralTriangle" style="font-family: monospace"></p>
+  </div>
+  <div class="col-12 mt-5" *ngIf="inverseEquilateralTriangle">
+    <h3 class="mb-4">Triángulo equilátero inverso</h3>
+    <p [innerHTML]="inverseEquilateralTriangle" style="font-family: monospace"></p>
+  </div>
   <div class="col-12 mt-5" *ngIf="rightTriangle">
     <h3 class="mb-4">Triángulo rectángulo</h3>
     <p [innerHTML]="rightTriangle" style="font-family: monospace"></p>
