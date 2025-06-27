@@ -21,6 +21,9 @@ export class TriangleComponent {
     });
   }
 
+  /**
+   * Método que genera un triángulo
+   */
   calculateTriangle() {
     const altura = this.triangleForm.value.altura;
 
