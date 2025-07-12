@@ -14,6 +14,9 @@ export class TriangleComponent {
   public invertedRightTriangle: string = ''; // Triándulo rectángulo invertido
   public equilateralTriangle: string = ''; // Triángulo equilátero
   public inverseEquilateralTriangle: string = ''; // Triángulo equilátero inverso
+  public triangleUp: string = ''; // Rombo, parte de arriba
+  public triangleDown: string = ''; // Rombo, parte de abaixo
+  public diamond: string = ''; // Rombo (diamante) comopleto
 
   constructor() {
     this.triangleForm = this.fb.group({
@@ -85,5 +88,38 @@ export class TriangleComponent {
         this.invertedRightTriangle += '<br>';
       }
     }
+
+    // Diamante de asteriscos
+    this.triangleUp = '';
+
+    if (altura) {
+      for (let i = 0; i < altura-1; i++) {
+        for (let j = 0; j < base; j++) {
+          if (j >= altura - i - 1 && j <= altura + i - 1) {
+            this.triangleUp += '*';
+          } else {
+            this.triangleUp += '&nbsp';
+          }
+        }
+        this.triangleUp += '<br>';
+      }
+    }
+
+    // Triángulo equilátero inverso
+    this.triangleDown = '';
+
+    if (altura) {
+      for (let i = 0; i < altura; i++) {
+        for (let j = 0; j < base; j++) {
+          if (j >= i && j < base - i) {
+            this.triangleDown += '*';
+          } else {
+            this.triangleDown += '&nbsp';
+          }
+        }
+        this.triangleDown += '<br>';
+      }
+    }
+    this.diamond = this.triangleUp + this.triangleDown;
   }
 }

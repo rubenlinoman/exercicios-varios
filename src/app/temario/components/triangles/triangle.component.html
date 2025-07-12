@@ -17,7 +17,10 @@
   </div>
   <div class="col-12 mt-5" *ngIf="inverseEquilateralTriangle">
     <h3 class="mb-4">Triángulo equilátero inverso</h3>
-    <p [innerHTML]="inverseEquilateralTriangle" style="font-family: monospace"></p>
+    <p
+      [innerHTML]="inverseEquilateralTriangle"
+      style="font-family: monospace"
+    ></p>
   </div>
   <div class="col-12 mt-5" *ngIf="rightTriangle">
     <h3 class="mb-4">Triángulo rectángulo</h3>
@@ -26,5 +29,9 @@
   <div class="col-12 mt-5" *ngIf="invertedRightTriangle">
     <h3 class="mb-4">Triángulo rectángulo invertido</h3>
     <p [innerHTML]="invertedRightTriangle" style="font-family: monospace"></p>
+  </div>
+  <div class="col-12 mt-5" *ngIf="triangleUp && triangleDown">
+    <h3 class="mb-4">Diamante de asteriscos</h3>
+    <p [innerHTML]="diamond" style="font-family: monospace"></p>
   </div>
 </div>

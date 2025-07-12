@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'temario-operacions',
@@ -7,12 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './operacions.component.css',
 })
 export class OperacionsComponent {
-  public saludo: string = 'Ola mundo';
-  public flag: boolean = false;
+  public fb = inject(FormBuilder);
+  public operationsForm: FormGroup;
 
-  public users = [
-    { id: 1, name: 'Juan Pérez', email: 'juan@example.com' },
-    { id: 2, name: 'Ana Gómez', email: 'ana@example.com' },
-    { id: 3, name: 'Luis Martínez', email: 'luis@example.com' },
-  ];
+  constructor() {
+        this.operationsForm = this.fb.group({
+      number: [''],
+    });
+  }
+
+
+  calculate() {
+
+  }
 }
